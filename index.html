@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sam Walker — Full-Stack Developer</title>
+  <meta name="description" content="Sam Walker is a full-stack developer building responsive interfaces, PHP and .NET backends, and database-driven web applications.">
+  <meta name="theme-color" content="#0d0c0b">
+  <meta property="og:title" content="Sam Walker — Full-Stack Developer">
+  <meta property="og:description" content="Interfaces, backends and the threads between them.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230d0c0b'/><path d='M14 44 C24 10, 40 54, 50 20' stroke='%23ff4d1f' stroke-width='5' fill='none' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Preloader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__count"><span id="loadNum">0</span></div>
+  <div class="loader__label">Threading the page</div>
+  <div class="loader__bar"><i id="loadBar"></i></div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<!-- Scroll trace (fixed thread on the left edge) -->
+<svg class="trace" viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
+  <path id="tracePath" d="M20 0 C 36 120, 4 240, 20 360 S 36 600, 20 720 S 4 900, 20 1000" />
+</svg>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo" aria-label="Sam Walker, back to top">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 46 C22 6, 42 58, 54 18" /></svg>
+    <span>Sam Walker</span>
+  </a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#about" data-hover>About</a>
+    <a href="#work" data-hover>Work</a>
+    <a href="#skills" data-hover>Skills</a>
+    <a href="#process" data-hover>Process</a>
+  </nav>
+  <a href="#contact" class="nav__cta" data-hover>Let's talk</a>
+  <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#about"><span>About</span></a>
+    <a href="#work"><span>Work</span></a>
+    <a href="#skills"><span>Skills</span></a>
+    <a href="#process"><span>Process</span></a>
+    <a href="#contact"><span>Contact</span></a>
+  </nav>
+  <a class="menu__mail" href="mailto:sam@threadandtrace.com">sam@threadandtrace.com</a>
+</div>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <canvas class="hero__threads" id="threads" aria-hidden="true"></canvas>
+    <div class="hero__inner">
+      <p class="hero__kicker"><span class="dot"></span><span data-scramble>Full-stack developer</span></p>
+      <h1 class="hero__name" aria-label="Sam Walker">
+        <span class="line"><span class="word" data-split>Sam</span></span>
+        <span class="line line--right"><span class="word" data-split>Walker</span></span>
+      </h1>
+      <div class="hero__foot">
+        <p class="hero__lede">I build digital experiences <em class="serif">from interface to backend</em> — and tie every thread in between.</p>
+        <div class="hero__ctas">
+          <a href="#work" class="btn btn--fill" data-magnetic data-hover>View projects</a>
+          <a href="#contact" class="btn btn--line" data-magnetic data-hover>Let's work together</a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee">
+      <span>PHP</span><b>✦</b><span class="serif">MySQL</span><b>✦</b><span>C# / .NET</span><b>✦</b><span class="serif">JavaScript</span><b>✦</b><span>Bootstrap 5</span><b>✦</b><span class="serif">GSAP</span><b>✦</b><span>Three.js</span><b>✦</b>
+      <span>PHP</span><b>✦</b><span class="serif">MySQL</span><b>✦</b><span>C# / .NET</span><b>✦</b><span class="serif">JavaScript</span><b>✦</b><span>Bootstrap 5</span><b>✦</b><span class="serif">GSAP</span><b>✦</b><span>Three.js</span><b>✦</b>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <p class="eyebrow"><span>01</span>About</p>
+    <h2 class="about__big" data-reveal-words>
+      I work on both ends of the web: the interface people touch and the PHP, .NET and MySQL systems that make it actually do something.
+    </h2>
+    <div class="about__grid">
+      <div class="about__col">
+        <p>Most projects start with the data. Once I know what needs storing and how people will find it, I design the pages around it and add interaction only where it helps someone get a task done faster.</p>
+        <p>The result is practical software that runs on ordinary hosting, loads quickly and still feels modern.</p>
+      </div>
+      <dl class="about__stats">
+        <div><dt data-count="13">0</dt><dd>projects in this portfolio</dd></div>
+        <div><dt data-count="3">0</dt><dd>stacks: frontend, PHP, .NET</dd></div>
+        <div><dt data-count="3">0</dt><dd>sites live on the web</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- FEATURED: horizontal scroll -->
+  <section class="featured" id="work" aria-labelledby="featuredTitle">
+    <div class="featured__pin">
+      <div class="featured__head">
+        <p class="eyebrow"><span>02</span>Selected work</p>
+        <h2 id="featuredTitle" class="featured__title">Things I've <em class="serif">stitched</em> together</h2>
+        <p class="featured__progress"><span id="featNum">01</span> / <span id="featTotal">05</span></p>
+      </div>
+      <div class="featured__track" id="featTrack"></div>
+    </div>
+  </section>
+
+  <!-- INDEX of all projects -->
+  <section class="index section" aria-labelledby="indexTitle">
+    <div class="index__head">
+      <h2 id="indexTitle" class="h2">All projects <sup id="indexCount">13</sup></h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter is-on" data-filter="all" aria-pressed="true" data-hover>All</button>
+        <button class="filter" data-filter="frontend" aria-pressed="false" data-hover>Frontend</button>
+        <button class="filter" data-filter="php" aria-pressed="false" data-hover>PHP</button>
+        <button class="filter" data-filter="dotnet" aria-pressed="false" data-hover>C# / .NET</button>
+      </div>
+    </div>
+    <ul class="index__list" id="indexList"></ul>
+    <div class="index__float" id="indexFloat" aria-hidden="true"><div class="index__float-inner" id="indexFloatInner"></div></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <p class="eyebrow"><span>03</span>Skills</p>
+    <h2 class="h2 skills__title">One toolkit, <em class="serif">every layer.</em></h2>
+    <div class="skills__stack" id="skillStack"></div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process section" id="process">
+    <p class="eyebrow"><span>04</span>Process</p>
+    <h2 class="h2">How a project <em class="serif">moves.</em></h2>
+    <div class="process__wrap">
+      <svg class="process__line" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path id="processPath" d="M50 0 C 90 160, 10 330, 50 500 S 90 840, 50 1000" />
+      </svg>
+      <ol class="process__steps">
+        <li><span class="process__n">01</span><h3>Understand</h3><p>Who uses it, what they need to get done, and what data sits underneath.</p></li>
+        <li><span class="process__n">02</span><h3>Plan</h3><p>Page structure, database tables and the few interactions that matter most.</p></li>
+        <li><span class="process__n">03</span><h3>Build</h3><p>Backend and frontend together, so the UI is shaped by real data from day one.</p></li>
+        <li><span class="process__n">04</span><h3>Ship</h3><p>Deploy, test on real devices, then refine based on how people actually use it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="eyebrow"><span>05</span>Contact</p>
+    <h2 class="contact__title"><span class="line"><span data-split>Got a</span></span><span class="line"><em class="serif">loose thread?</em></span></h2>
+    <p class="contact__text">Tell me what you're building: a new site, a backend, a database that needs sorting out or an interface that needs to feel better.</p>
+    <button class="contact__mail" id="copyMail" data-cursor="Copy" aria-label="Copy email address sam@threadandtrace.com">
+      <span class="contact__mail-text" data-wave>sam@threadandtrace.com</span>
+    </button>
+    <p class="contact__hint" id="copyHint" role="status">Click to copy, or <a href="mailto:sam@threadandtrace.com" data-hover>open your mail app</a>.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__mark" aria-hidden="true">SAM WALKER</div>
+  <div class="footer__row">
+    <span>&copy; <span id="year"></span> Sam Walker</span>
+    <span id="socials"></span>
+    <a href="#top" data-hover>Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- Project detail -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+  <div class="sheet__backdrop" data-close></div>
+  <article class="sheet__panel" tabindex="-1">
+    <button class="sheet__close" data-close aria-label="Close project details" data-hover>Close ✕</button>
+    <div id="sheetBody"></div>
+  </article>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
