@@ -20,7 +20,7 @@ sliding project detail panel with "next project".
 Reduced-motion users get a calm, static version; the custom cursor only appears on mouse devices.
 
 ## Project links
-Five projects link to live previews hosted on claude.ai. Those links are private until shared:
+Ten projects link to live previews hosted on claude.ai. Those links are private until shared:
 open each one in Claude and use **Share** to make it public, or host the projects yourself
 (e.g. GitHub Pages) and replace the `live` URLs in `js/data.js`.
 Projects with no `live` link (StockRoom, LinkLite, Clinic API, Expense Tracker) show a

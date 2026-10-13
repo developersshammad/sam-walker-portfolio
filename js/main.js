@@ -38,7 +38,7 @@
     </div>`;
   }
 
-  const FEATURED = ['fanhub', 'pccentre', 'furshield', 'pulse', 'seatpick'].map((id) => PROJECTS.find((p) => p.id === id)).filter(Boolean);
+  const FEATURED = ['abyss', 'solenne', 'fanhub', 'beatgrid', 'flowfield', 'pccentre', 'furshield'].map((id) => PROJECTS.find((p) => p.id === id)).filter(Boolean);
   $('#featTrack').innerHTML = FEATURED.map((p) => `
     <button type="button" class="fcard" data-open="${p.id}" data-cursor="View">
       <div class="fcard__cover">${cover(p)}</div>
